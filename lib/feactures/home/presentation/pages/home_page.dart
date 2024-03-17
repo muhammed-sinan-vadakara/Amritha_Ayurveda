@@ -7,14 +7,20 @@ import 'package:amritha_ayurveda/feactures/home/presentation/pages/registration_
 import 'package:amritha_ayurveda/feactures/home/presentation/pages/treatment_page.dart';
 import 'package:amritha_ayurveda/feactures/home/presentation/provider/patient_provider.dart';
 import 'package:amritha_ayurveda/feactures/home/presentation/widgets/container_widget.dart';
+import 'package:amritha_ayurveda/feactures/home/presentation/widgets/home_page_shimmer_widget.dart';
 import 'package:amritha_ayurveda/feactures/home/presentation/widgets/listview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
@@ -94,8 +100,16 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 }
-                return const Center(
-                  child: CircularProgressIndicator(),
+                return
+                    // Center(
+                    //   child: CircularProgressIndicator(
+                    //     color: theme.colors.primary,
+                    //   ),
+                    // );
+                    const Column(
+                  children: [
+                    HomePageShimmer(),
+                  ],
                 );
               },
             )

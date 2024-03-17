@@ -4,6 +4,7 @@ import 'package:amritha_ayurveda/core/themes/app_theme.dart';
 import 'package:amritha_ayurveda/core/widgets/button_widget.dart';
 import 'package:amritha_ayurveda/core/widgets/subtitle_widget.dart';
 import 'package:amritha_ayurveda/core/widgets/textfield_widget.dart';
+import 'package:amritha_ayurveda/feactures/home/presentation/widgets/payment_otion_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,6 +21,9 @@ class RegistrationPage extends HookWidget {
     final branchController = useTextEditingController();
     final totalamountController = useTextEditingController();
     final discountamountController = useTextEditingController();
+    final advanceamountController = useTextEditingController();
+    final balanceamountController = useTextEditingController();
+    final treatmentdateController = useTextEditingController();
     final theme = AppTheme.of(context);
     final constants = HomeConstants();
     final appAssets = AppAssetsConstants();
@@ -29,7 +33,7 @@ class RegistrationPage extends HookWidget {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
             appBar: AppBar(
-              title: const Text("Register"),
+              title: Text(constants.txtRegister),
               actions: [
                 Padding(
                   padding: EdgeInsets.only(right: theme.spaces.space_200),
@@ -49,7 +53,7 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: constants.txtEnterName,
+                      labelText: constants.txtEnter + constants.txtfulName,
                       controller: nameController,
                     ),
                     SizedBox(
@@ -62,7 +66,8 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: constants.txtWhatsappNumber,
+                      labelText:
+                          constants.txtEnter + constants.txtWhatsappNumber,
                       controller: whatsappController,
                     ),
                     SizedBox(
@@ -75,7 +80,7 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: constants.txtEnterAddress,
+                      labelText: constants.txtEnter + constants.txtfullAddress,
                       controller: addressController,
                     ),
                     SizedBox(
@@ -88,7 +93,7 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: '',
+                      labelText: constants.txtEnter + constants.txtLocation,
                       icon: IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_drop_down),
@@ -109,7 +114,7 @@ class RegistrationPage extends HookWidget {
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_drop_down),
                       ),
-                      labelText: '',
+                      labelText: constants.txtEnter + constants.txtBranch,
                       controller: branchController,
                     ),
                     SizedBox(
@@ -122,7 +127,7 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: '',
+                      labelText: constants.txtEnter + constants.txtTotalAmount,
                       controller: totalamountController,
                     ),
                     SizedBox(
@@ -135,8 +140,74 @@ class RegistrationPage extends HookWidget {
                       height: theme.spaces.space_100,
                     ),
                     TextFieldWidget(
-                      labelText: '',
+                      labelText:
+                          constants.txtEnter + constants.txtDiscountAmount,
                       controller: discountamountController,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_200,
+                    ),
+                    SubTitleWidget(
+                      title: constants.txtPaymentoption,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_100,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: theme.spaces.space_200),
+                      child: SizedBox(
+                        height: theme.spaces.space_400,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            PaymentOptionWidget(options: constants.txtCash),
+                            PaymentOptionWidget(options: constants.txtCard),
+                            PaymentOptionWidget(options: constants.txtUpi),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_200,
+                    ),
+                    SubTitleWidget(
+                      title: constants.txtAdvanceAmount,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_100,
+                    ),
+                    TextFieldWidget(
+                      labelText:
+                          constants.txtEnter + constants.txtAdvanceAmount,
+                      controller: advanceamountController,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_200,
+                    ),
+                    SubTitleWidget(
+                      title: constants.txtBalnceAmount,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_100,
+                    ),
+                    TextFieldWidget(
+                      labelText: constants.txtEnter + constants.txtBalnceAmount,
+                      controller: balanceamountController,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_200,
+                    ),
+                    SubTitleWidget(
+                      title: constants.txtDate,
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_100,
+                    ),
+                    TextFieldWidget(
+                      labelText: constants.txtEnter + constants.txtDate,
+                      controller: treatmentdateController,
+                      icon: const Icon(Icons.calendar_month),
                     ),
                     SizedBox(
                       height: theme.spaces.space_400,

@@ -4,43 +4,36 @@ import 'package:amritha_ayurveda/core/themes/extensions/color_extension.dart';
 import 'package:amritha_ayurveda/core/themes/extensions/space_extension.dart';
 import 'package:amritha_ayurveda/core/themes/extensions/typography_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'light_theme.g.dart';
-
-final _lightTheme = ThemeData(
+final lightTheme = ThemeData(
   brightness: Brightness.light,
   extensions: [
     AppColorExtension(
       primary: AppColorPalette.green,
-      secondary: AppColorPalette.white,
-      text: AppColorPalette.blue900,
-      textInverse: AppColorPalette.gray200,
-      textSubtle: AppColorPalette.gray300,
-      textSubtlest: AppColorPalette.grey400,
-      textDisabled: AppColorPalette.grey350,
+      secondary: Colors.white,
+      text: Colors.black,
+      textInverse: AppColorPalette.grey,
+      textSubtle: Colors.grey,
+      textSubtlest: Colors.red,
+      textDisabled: Colors.grey,
     ),
     AppSpaceExtension.fromBaseSpace(8),
     AppTypographyExtension.fromColors(
-      defaultFontColor: AppColorPalette.blue900,
+      defaultFontColor: Colors.black,
       linkColor: Colors.blue,
-      dimFontColor: AppColorPalette.grey400,
+      dimFontColor: Colors.grey,
     ),
     AppBoxShadowExtension(
-        primary: BoxShadow(
-          blurRadius: 34,
-          spreadRadius: -10,
-          color: Colors.black.withOpacity(0.1),
-        ),
-        secondary: BoxShadow(
-          blurRadius: 20,
-          spreadRadius: -10,
-          color: Colors.black.withOpacity(0.2),
-        ))
+      primary: BoxShadow(
+        blurRadius: 34,
+        spreadRadius: -10,
+        color: Colors.black.withOpacity(0.1),
+      ),
+      secondary: BoxShadow(
+        blurRadius: 20,
+        spreadRadius: -10,
+        color: Colors.black.withOpacity(0.2),
+      ),
+    )
   ],
 );
-
-@riverpod
-ThemeData lightTheme(LightThemeRef ref) {
-  return _lightTheme;
-}

@@ -13,7 +13,7 @@ import 'package:get_it/get_it.dart';
 void setupDependencies() {
   final getIt = GetIt.instance;
 
-  getIt.registerSingleton<ThemeData>(lightTheme as ThemeData);
+  getIt.registerSingleton<ThemeData>(lightTheme);
   getIt.registerSingleton<LoginDataSource>(LoginDataSourceImpl());
   getIt.registerSingleton<LoginRepository>(
       LoginRepositoryImpl(dataSource: getIt.get<LoginDataSource>()));

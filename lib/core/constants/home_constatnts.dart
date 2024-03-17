@@ -1,8 +1,10 @@
 class HomeConstants {
+  final String txttittle = 'Register';
   final String txtHome = 'Home';
   final String txtSearchField = 'Search for treatment';
   final String txtViewBooking = 'View Booking Details';
   final String txtRegister = 'Register Now';
+  final String txtEnter = 'Enter Your ';
   final String txtName = 'Name';
   final String txtNumber = 'Whatsapp Number';
   final String txtAddress = 'Address';
@@ -10,14 +12,18 @@ class HomeConstants {
   final String txtBranch = 'Branch';
   final String txtTreatment = 'Treatment';
   final String txtTotalAmount = 'Total Amount';
+  final String txtPaymentoption = 'Payment Option';
+  final String txtCash = 'Cash';
+  final String txtCard = 'Card';
+  final String txtUpi = 'Upi';
   final String txtDiscountAmount = 'Discount Amount';
   final String txtAdvanceAmount = 'Advance Amount';
   final String txtBalnceAmount = 'Balance Amount';
   final String txtDate = 'Treatment date';
   final String txtTime = 'Treatment Time';
-  final String txtEnterName = 'Enter Your Full Name';
-  final String txtWhatsappNumber = 'Enter Your Whatsapp Number';
-  final String txtEnterAddress = 'Enter Your Full Address';
+  final String txtfulName = 'Full Name';
+  final String txtWhatsappNumber = 'Whatsapp Number';
+  final String txtfullAddress = 'Full Address';
   final String txtSave = 'Save';
   final String txtShowBranches = 'Show Branches';
   final String txtShowTreatments = 'Show Treatments';
